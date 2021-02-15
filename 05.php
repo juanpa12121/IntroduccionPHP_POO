@@ -1,7 +1,7 @@
 <?php include 'includes/header.php';
 
 // HERENCIA: Crear clase ppal, luego crearemos subclases que heredarán atributos y métodos
-
+//Clase PADRE (Sólo de PLANTILLA, por eso abstract)
 abstract class Transporte {
     public function __construct(protected int $ruedas, protected int $capacidad)
     {    
