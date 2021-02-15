@@ -32,7 +32,6 @@ class Automovil Extends Transporte{
     public function getTransmision() : string {
         return $this->transmision;
     }
-
 }
 
 $bicicleta = new Bicicleta(2, 1);
