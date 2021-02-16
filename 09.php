@@ -24,7 +24,9 @@ var_dump($titulo);
 var_dump($imagen);
 
 while($stmt->fetch()): //Mientras hayan resultados
-    var_dump($titulo);
+    echo "<pre>";
+var_dump($titulo);
+echo "</pre>";
 endwhile;
 
 
