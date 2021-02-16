@@ -1,4 +1,6 @@
 <?php include 'includes/header.php';
+
+require 'vendor/autoload.php';
 // Se recomienda tener UNA clase por archivo
 
 //NO NECESARIO PARA INCLUIR
@@ -8,17 +10,18 @@
 
 use App\Clientes;
 use App\Detalles;
+use \Firebase\JWT\JWT;
 
-// Incluir las otras clases
-function mi_autoload($clase){ //Para importar automatica/ las clases que voy requiriendo
-    //echo $clase; //R= App\Detalles, Pero hay que quitarle el App
-    $partes = explode('\\', $clase); //Busque en el string "App\Detalles", la \
-    //Crea un array con App y Detalles, en las pos 0 y 1 respectiva/
+// Incluir las otras clases (YA NO NECESARIO PORQUE LO HACE COMPOSER)
+// function mi_autoload($clase){ //Para importar automatica/ las clases que voy requiriendo
+//     //echo $clase; //R= App\Detalles, Pero hay que quitarle el App
+//     $partes = explode('\\', $clase); //Busque en el string "App\Detalles", la \
+//     //Crea un array con App y Detalles, en las pos 0 y 1 respectiva/
 
-    require  __DIR__ . '/clases/' . $partes[1] . '.php';
-}
+//     require  __DIR__ . '/clases/' . $partes[1] . '.php';
+// }
 
-spl_autoload_register('mi_autoload');
+// spl_autoload_register('mi_autoload');
 
 // class Clientes { //Clase que se repite
 //     public function __construct()
