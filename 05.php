@@ -34,8 +34,6 @@ class Automovil Extends Transporte{
     }
 }
 
-
-
 $bicicleta = new Bicicleta(2, 1);
 echo $bicicleta->getInfo();
 echo $bicicleta->getRuedas();
