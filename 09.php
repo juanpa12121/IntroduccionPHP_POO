@@ -6,6 +6,7 @@ $db = new mysqli('localhost', 'root', 'root', 'bienesraices_crud'); //Objeto ten
 
 // 1. CREAMOS EL QUERY
 $query = "SELECT titulo, imagen from propiedades";
+
 // 2. LO PREPARAMOS
 $stmt = $db->prepare($query); //Preparate para realizar la sgte consulta
 // stmt: Sentencia preparada: Va a tener toda la info
@@ -14,18 +15,20 @@ $stmt = $db->prepare($query); //Preparate para realizar la sgte consulta
 $stmt->execute(); //Ejecutamos el stmt
 
 //4. CREAMOS LA VARIABLE
-$stmt->bind_result($titulo, $imagen); //Va a crear automatica/ una vble con los resultados de la consulta
+ $stmt->bind_result($titulo, $imagen); //Va a crear automatica/ una vble con los resultados de la consulta
 
-//5. ASIGNAMOS EL RESULTADO (Cuando es 1 resultado, de lo contrario saltar al paso 6)
+//5. ASIGNAMOS EL RESULTADO (Cuando es 1 resultado, de lo contrario saltar al paso 7)
 //$stmt->fetch(); //Va a traerse la vble $titulo con la info de la consulta
 
 //6. IMPRIMIMOS EL RESULTADO
-var_dump($titulo);
-var_dump($imagen);
+// var_dump($titulo);
+// var_dump($imagen);
 
+//7. IMPRIMIMOS SI SON VARIOS RESULTADOS
 while($stmt->fetch()): //Mientras hayan resultados
-    echo "<pre>";
-var_dump($titulo);
+echo "<pre>";
+    var_dump($titulo);
+    var_dump($imagen);
 echo "</pre>";
 endwhile;
 

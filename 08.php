@@ -10,18 +10,17 @@ require 'vendor/autoload.php';
 
 use App\Clientes;
 use App\Detalles;
-use \Firebase\JWT\JWT;
+
 
 // Incluir las otras clases (YA NO NECESARIO PORQUE LO HACE COMPOSER)
 // function mi_autoload($clase){ //Para importar automatica/ las clases que voy requiriendo
-//     //echo $clase; //R= App\Detalles, Pero hay que quitarle el App
-//     $partes = explode('\\', $clase); //Busque en el string "App\Detalles", la \
-//     //Crea un array con App y Detalles, en las pos 0 y 1 respectiva/
+//--    echo $clase; //R= App\Detalles, Pero hay que quitarle el App
+        $partes = explode('\\', $clase); //Busque en el string "App\Detalles", la \
+//--    crea un array con App y Detalles, en las pos 0 y 1 respectiva/
 
-//     require  __DIR__ . '/clases/' . $partes[1] . '.php';
+        require  __DIR__ . '/clases/' . $partes[1] . '.php';
 // }
-
-// spl_autoload_register('mi_autoload');
+ spl_autoload_register('mi_autoload');
 
 // class Clientes { //Clase que se repite
 //     public function __construct()
@@ -29,6 +28,10 @@ use \Firebase\JWT\JWT;
 //         echo "Desde 08.php que contiene los clientes";
 //     }
 // }
+
+//En vez de hacer esto (se repite el App), se pone el use App arribita y se omiten aqui
+// $detalles = new App\Detalles();
+// $clientes = new App\Clientes(); 
 
 // Con lo anterior, ya podremos instanciar de Clientes y Detalles
 // Ya que autoload automatica/ itera y busca las clases que vamos a instanciar
