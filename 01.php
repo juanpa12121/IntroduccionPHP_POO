@@ -36,7 +36,7 @@ class Producto{
         echo "El producto es: " . $this->nombre . " y su precio es de: $" . $this->precio;
     }
 
-    // This ahace ref a los atributos que fueron agrgados en el objeto creado en la clase
+    // This hace ref a los atributos que fueron agrgados en el objeto creado en la clase
 }
 
 // Instanciar clase
